@@ -1,0 +1,36 @@
+{
+    "domain": {
+        "root": "example.com",
+        "static": "static.example.com"
+    },
+    "mysql": {
+        "host": "example.com",
+        "port": 3306,
+        "user": "user",
+        "password": "password",
+        "database": "database"
+    },
+    "COS": {
+        "SecretId": "SecretId",
+        "SecretKey": "SecretKey",
+        "Bucket": "Bucket",
+        "Region": "Region"
+    },
+    "source": {
+        "base": "https://origin.com",
+        "resourceBase": [
+            "https://resource1.origin.com",
+            "https://resource2.origin.com"
+        ],
+        "user": [
+            {
+                "userId": 0,
+                "sessonId": 0
+            },
+            {
+                "userId": 1,
+                "sessionId": 1
+            }
+        ]
+    }
+}

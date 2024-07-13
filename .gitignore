@@ -1,0 +1,4 @@
+config.json
+*.txt
+*.bk
+node_modules/
