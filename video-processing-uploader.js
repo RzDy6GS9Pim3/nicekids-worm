@@ -38,7 +38,8 @@ function cropVideo(inputFile, outputFile, width, height) {
       .setStartTime('00:00:04.5')
       .videoFilter(`crop=iw:ih-(${height}*.05)*2,scale=${width}:-1`)
       .on('progress', (progress) => {
-        console.log(`Processing: ${Math.round(progress.percent)}%`);
+        // console.log(`Processing: ${Math.round(progress.percent)}%`);
+        process.stdout.write(`\rProcessing: ${Math.round(progress.percent)}%`);
       })
       .on('end', () => {
         resolve();
@@ -90,12 +91,12 @@ async function processVideo(fileName) {
   if (width > height) {
     console.log(`Uploading '${fileName}' directly to the storage bucket.`);
   } else {
-    console.log(`Processing and uploading '${fileName}'.`);
+    console.log(`\nProcessing and uploading '${fileName}'.`);
     await cropVideo(filePath, `${filePath}.cropped.mp4`, width, height);
     filePath = `${filePath}.cropped.mp4`;
   }
   await uploadToCOS(fileName, filePath);
-  deleteLocalFile(filePath);
+  // deleteLocalFile(filePath);
 }
 
 // 主函数

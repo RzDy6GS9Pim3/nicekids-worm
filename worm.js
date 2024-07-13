@@ -8,12 +8,13 @@ const axios = require('axios')
 
 const configFile = fs.readFileSync('config.json');
 const configJson = JSON.parse(configFile);
-const [host, user, password, database] = [configJson.mysql.host, configJson.mysql.user, configJson.mysql.password, configJson.mysql.database];
+const [host, port, user, password, database] = [configJson.mysql.host, configJson.mysql.port, configJson.mysql.user, configJson.mysql.password, configJson.mysql.database];
 const [base, resourceBase, originUser] = [configJson.source.base, configJson.source.resourceBase, configJson.source.user];
 const static = configJson.domain.static;
 
 const db = mysql.createPool({
     host,
+    port,
     user,
     password,
     database
@@ -333,8 +334,6 @@ async function mysqldatalistIndex(URLPathName = '/', URLqueryJson) { //包含 in
             await mysqldataResourceIndex(data, URLqueryJson.userid);
             await insertmysqlValueJson(table, data);
         }
-
-
     }
     return dataArray
 }
