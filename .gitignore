@@ -1,4 +1,5 @@
 config.json
 *.txt
-*.bk
+*.bk.*
 node_modules/
+resourceDownloader*

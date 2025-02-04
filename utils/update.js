@@ -6,10 +6,11 @@ const table = 'vapp_prereview_getprereviewresource'
 
 const configFile = fs.readFileSync('config.json');
 const configJson = JSON.parse(configFile);
-const [host, user, password, database] = [configJson.mysql.host, configJson.mysql.user, configJson.mysql.password, configJson.mysql.database];
+const [host, port, user, password, database] = [configJson.mysql.host, configJson.mysql.port, configJson.mysql.user, configJson.mysql.password, configJson.mysql.database];
 
 const db = mysql.createPool({
     host,
+    port,
     user,
     password,
     database

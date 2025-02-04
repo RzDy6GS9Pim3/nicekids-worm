@@ -1,0 +1,10 @@
+{
+    "StartLessonList": "/Vapp/Lesson/getStartLessonList",
+    "EndLessonList": "/Vapp/Lesson/getEndLessonList",
+    "EndLessonCmpflg": "/Vapp/Lesson/getEndLessonCmpflg",
+    "PrereviewResource": "/Vapp/Prereview/getPrereviewResource",
+    "EndLesson": "/Vapp/Lesson/getEndLesson",
+    "ExamPart": "/Vapp/Challenge/getExamPart",
+    "LessonBook": "/Vapp/Lesson/getLessonBook",
+    "BookSource": "/Vapp/Book/getBookSource"
+}
